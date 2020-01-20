@@ -27,8 +27,8 @@ $btnUri = (get_option( HMTB_PREFIX . 'button_uri')!='') ? sanitize_text_field(ge
     transition:all 0.5s ease-in-out;
     -webkit-transition:all 0.5s ease-in-out;
 }
-#hmtb-top-bar.hide { top:-100px; }
-#hmtb-footer-bar.hide { bottom:-100px; }
+#hmtb-top-bar.hide { top:-<?php echo $barHeight; ?>px; }
+#hmtb-footer-bar.hide { bottom:-<?php echo $barHeight; ?>px; }
 <?php } ?>
 .txtType { color: <?php echo $msgColor; ?>; }
 a.hmtb-button {
@@ -42,7 +42,7 @@ a.hmtb-button {
 <?php if(get_option( HMTB_PREFIX . 'display_option') == "top") { ?>
 <div id="hmtb-top-bar">
     <div class="hmtb-msg-container">
-        <?php echo (null != get_option(HMTB_PREFIX . 'message_content')) ? strtoupper(sanitize_text_field(get_option(HMTB_PREFIX . 'message_content'))) : esc_attr('There is no message to display right now.'); ?>
+        <?php echo (null != get_option(HMTB_PREFIX . 'message_content')) ? sanitize_text_field(get_option(HMTB_PREFIX . 'message_content')) : esc_attr('There is no message to display right now.'); ?>
 	</div>
     <div class="hmtb-btn-container">
         <a href="<?php _e($btnUri); ?>" style="display:inline-block;" class="hmtb-button" target="_blank"><?php _e( $btnTxt, HMTB_TEXT_DOMAIN ); ?></a>
@@ -53,7 +53,7 @@ a.hmtb-button {
 <?php if(get_option( HMTB_PREFIX . 'display_option') == "bottom") { ?>
 <div id="hmtb-footer-bar">
     <div class="hmtb-msg-container">
-        <?php echo (null != get_option(HMTB_PREFIX . 'message_content')) ? strtoupper(sanitize_text_field(get_option(HMTB_PREFIX . 'message_content'))) : esc_attr('There is no message to display right now.'); ?>
+        <?php echo (null != get_option(HMTB_PREFIX . 'message_content')) ? sanitize_text_field(get_option(HMTB_PREFIX . 'message_content')) : esc_attr('There is no message to display right now.'); ?>
 	</div>
     <div class="hmtb-btn-container">
         <a href="<?php _e($btnUri); ?>" style="display:inline-block;" class="hmtb-button" target="_blank"><?php _e( $btnTxt, HMTB_TEXT_DOMAIN ); ?></a>
