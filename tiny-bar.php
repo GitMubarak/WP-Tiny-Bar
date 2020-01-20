@@ -3,7 +3,7 @@
  * Plugin Name: 	Tiny Bar
  * Plugin URI:		http://wordpress.org/plugins/tiny-bar/
  * Description: 	This Tiny Bar plugin display a bar to your website. You can place it at top or bottom of your webpage. It overlaps and hides when you scroll. Tiny Bar allows you to display a message to your visitors with a custom button.
- * Version: 		1.2
+ * Version: 		1.3
  * Author: 			Hossni Mubarak
  * Author URI: 		http://www.hossnimubarak.com
  * Text Domain: 	tiny-bar
