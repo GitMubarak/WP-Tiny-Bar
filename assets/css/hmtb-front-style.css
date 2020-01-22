@@ -1,32 +1,41 @@
-#hmtb-top-bar, #hmtb-footer-bar {
+#hmtb-top-bar,
+#hmtb-footer-bar {
     width: 100%;
-	margin:0; padding:0;
-    text-align:center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
     position: fixed;
-    z-index:300;
-    overflow:none;
-    opacity:0.9;
-    
-   -moz-transition:all 0.5s ease-in-out;
-   -o-transition:all 0.5s ease-in-out;
-   transition:all 0.5s ease-in-out;
-   -webkit-transition:all 0.5s ease-in-out;
-   	display: flex;
-	float: left;
-	align-items: center;
+    z-index: 300;
+    overflow: none;
+    opacity: 0.9;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    display: flex;
+    float: left;
+    align-items: center;
     justify-content: space-around;
 }
-#hmtb-top-bar { top: 0; }
-#hmtb-footer-bar { bottom: 0; }
-.txtType {
-	margin:0; padding:0;
-	vertical-align:middle;
-	height:auto;
+
+#hmtb-top-bar {
+    top: 0;
 }
-a.hmtb-button {
-    display: block;
+
+#hmtb-footer-bar {
+    bottom: 0;
+}
+
+.txtType {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    height: auto;
+}
+
+.hmtb-btn-container a.hmtb-button {
+    display: inline-block;
     text-decoration: none;
-    color: #fff;
     font-size: 16px;
     line-height: 36px;
     height: 38px;
@@ -40,8 +49,10 @@ a.hmtb-button {
     white-space: nowrap;
     box-sizing: border-box;
 }
-@media(max-width:767px){
-    #hmtb-top-bar, #hmtb-footer-bar {
+
+@media(max-width:767px) {
+    #hmtb-top-bar,
+    #hmtb-footer-bar {
         flex-direction: column;
     }
 }

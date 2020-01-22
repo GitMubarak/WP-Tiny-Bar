@@ -21,16 +21,21 @@ This Tiny Bar plugin display a bar to your website. You can place it top or bott
 * Fully integrated in WordPress
 * Bar Display Position: Top or Bottom
 * Stay visible or hide when scrolling
-* Bar Background Color option
-* Bar Height option
+* Bar Background Color Option
+* Bar Height Option
 * Message Content (accept html)
-* Message Color
-* Button Text
-* Button Color
-* Button URL (open in a new tab)
+* Message Color Options
+* Button Text Option
+* Button Text Color Option
+* Button Text Font Weight Option
+* Button Color Option
+* Button Url Option
+* Button Url Target Option
+* Button Url Nofollow Option
 
 
-**Translation Ready:**
+
+**📋 Translation Ready:**
 * POT file included (/languages/)
 * Sample bengoli translation included
 
@@ -53,6 +58,7 @@ If you find this plugin helpful, feel free to give us your valuable review and s
 👉 [WP Alert Bars](https://wordpress.org/plugins/wp-alert-bars/) Notification/Alert box Plugin in Post/Page
 👉 [WP Top News](https://wordpress.org/plugins/wp-top-news/) Top News, Breaking News, Headlines Plugin
 👉 [HM Wc Product Advertiser](https://wordpress.org/plugins/hm-wc-product-advertiser/) Display WC prodcuts when scroll
+
 
 == Installation ==
 
@@ -93,7 +99,17 @@ Yes, we are working on it. Please stay with us.
 4. TinyBar at Bottom of the page
 5. TinyBar on mobile view (responsive)
 
+
 == Changelog ==
+
+= 1.3 =
+* Admin Settings Layout Changes to Content Settings and Styles Settings
+* Button Text Color Option Added
+* Button Text Font Weight Option Added
+* Button Url Target Option Added
+* Button Url Nofollow Option Added
+* Minor Bug Fixes
+* Some Code changes and improved
 
 = 1.2 =
 * POT file included (/languages/)

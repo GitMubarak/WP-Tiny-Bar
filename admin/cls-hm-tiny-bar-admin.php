@@ -103,12 +103,17 @@ class HMTB_Admin
 		add_settings_field( "hmtb_message_content", esc_html__( 'Message / Content', HMTB_TEXT_DOMAIN ), array(&$this, "hmtb_message_content"), "hmtb-content-section", $this->hmtb_option_group );
 		add_settings_field( "hmtb_button_text", esc_html__( 'Button Text', HMTB_TEXT_DOMAIN ), array(&$this, "hmtb_button_text"), "hmtb-content-section", $this->hmtb_option_group );
 		add_settings_field( "hmtb_button_uri", esc_html__( 'Button URL', HMTB_TEXT_DOMAIN ), array(&$this, "hmtb_button_uri"), "hmtb-content-section", $this->hmtb_option_group );
+		add_settings_field( "hmtb_button_url_is_external", esc_html__( 'Button URL Is External?', HMTB_TEXT_DOMAIN ), array(&$this, "hmtb_button_url_is_external"), "hmtb-content-section", $this->hmtb_option_group );
+		add_settings_field( "hmtb_button_url_nofollow", esc_html__( 'Button URL Nofollow?', HMTB_TEXT_DOMAIN ), array(&$this, "hmtb_button_url_nofollow"), "hmtb-content-section", $this->hmtb_option_group );
 		
+
 		// ==================================
 		add_settings_section( $this->hmtb_option_group_styles, esc_html__( '', HMTB_TEXT_DOMAIN ), null, "hmtb-styles-section" );
 		add_settings_field( "hmtb_background_color", esc_html__( 'Bar Background Color', HMTB_TEXT_DOMAIN ), array(&$this, "hmtb_background_color"), "hmtb-styles-section", $this->hmtb_option_group_styles );
 		add_settings_field( "hmtb_message_color", esc_html__( 'Message Color', HMTB_TEXT_DOMAIN ), array(&$this, "hmtb_message_color"), "hmtb-styles-section", $this->hmtb_option_group_styles );
 		add_settings_field( "hmtb_button_color", esc_html__( 'Button Color', HMTB_TEXT_DOMAIN ), array(&$this, "hmtb_button_color"), "hmtb-styles-section", $this->hmtb_option_group_styles );
+		add_settings_field( "hmtb_button_text_color", esc_html__( 'Button Text Color', HMTB_TEXT_DOMAIN ), array(&$this, "hmtb_button_text_color"), "hmtb-styles-section", $this->hmtb_option_group_styles );
+		add_settings_field( "hmtb_button_font_weight", esc_html__( 'Button Font Weight', HMTB_TEXT_DOMAIN ), array(&$this, "hmtb_button_font_weight"), "hmtb-styles-section", $this->hmtb_option_group_styles );
 
 
 		// Content Settings
@@ -118,11 +123,15 @@ class HMTB_Admin
 		register_setting( $this->hmtb_option_group, HMTB_PREFIX . 'message_content' );
 		register_setting( $this->hmtb_option_group, HMTB_PREFIX . 'button_text' );
 		register_setting( $this->hmtb_option_group, HMTB_PREFIX . 'button_uri' );
+		register_setting( $this->hmtb_option_group, HMTB_PREFIX . 'button_url_is_external' );
+		register_setting( $this->hmtb_option_group, HMTB_PREFIX . 'button_url_nofollow' );
 
 		// Style Settings
 		register_setting( $this->hmtb_option_group_styles, HMTB_PREFIX . 'background_color' );
 		register_setting( $this->hmtb_option_group_styles, HMTB_PREFIX . 'message_color' );
 		register_setting( $this->hmtb_option_group_styles, HMTB_PREFIX . 'button_color' );
+		register_setting( $this->hmtb_option_group_styles, HMTB_PREFIX . 'button_text_color' );
+		register_setting( $this->hmtb_option_group_styles, HMTB_PREFIX . 'button_font_weight' );
 		
 	}
 
@@ -184,11 +193,39 @@ class HMTB_Admin
 		<?php
 	}
 
+	function hmtb_button_text_color() {
+		?>
+		<input class="hmtb_button_text_color hmtb-wp-color" type="text" name="hmtb_button_text_color" id="hmtb_button_text_color" value="<?php echo get_option( HMTB_PREFIX . 'button_text_color' ); ?>">
+		<div id="colorpicker"></div>
+		<?php
+	}
+
 	function hmtb_button_uri() {
 		?>
 		<input type="text" name="hmtb_button_uri" class="hmtb_button_uri" id="hmtb_button_uri" style="width:300px;" value="<?php echo sanitize_text_field(get_option( HMTB_PREFIX . 'button_uri' )); ?>">
 		<br>
 		<label class="field-icon"><?php esc_html_e('Use http:// or https://', HMTB_TEXT_DOMAIN); ?></label>
+		<?php
+	}
+
+	function hmtb_button_url_is_external() {
+		?>
+		<input type="checkbox" name="hmtb_button_url_is_external" class="hmtb_button_url_is_external" value="true" <?php if(get_option('hmtb_button_url_is_external') == "true") { echo 'checked'; } ?>>
+		<?php
+	}
+
+	function hmtb_button_url_nofollow() {
+		?>
+		<input type="checkbox" name="hmtb_button_url_nofollow" class="hmtb_button_url_nofollow" value="true" <?php if(get_option('hmtb_button_url_nofollow') == "true") { echo 'checked'; } ?>>
+		<?php
+	}
+
+	function hmtb_button_font_weight() {
+		?>
+		<select name="hmtb_button_font_weight" class="hmtb_button_font_weight" id="hmtb_button_font_weight">
+			<option value="normal" <?php if(get_option( HMTB_PREFIX . 'button_font_weight' ) == 'noraml') echo 'selected'; ?>>Normal</option>
+			<option value="bold" <?php if(get_option( HMTB_PREFIX . 'button_font_weight' ) == 'bold') echo 'selected'; ?>>Bold</option>
+		</select>
 		<?php
 	}
 }
