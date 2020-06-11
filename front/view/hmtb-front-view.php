@@ -1,72 +1,124 @@
 <?php
 $hmtb_front_prefix = substr(HMTB_PREFIX, 0, -1) . '-';
 
-$bg = (get_option( HMTB_PREFIX . 'background_color')!='') ? get_option( HMTB_PREFIX . 'background_color') : '#999';
-$barHeight = (get_option( HMTB_PREFIX . 'bar_height')!='') ? sanitize_text_field(get_option( HMTB_PREFIX . 'bar_height')) : 100;
+$hmtb_display_type          = ( '' !== get_option('hmtb_display_type') ) ? get_option('hmtb_display_type') : 'hmtb-fixed';
+$hmtb_display_option        = ( '' !== get_option('hmtb_display_option') ) ? get_option('hmtb_display_option') : 'top';
+$hmtb_scroll_hide           = ( '' !== get_option('hmtb_scroll_hide') ) ? get_option('hmtb_scroll_hide') : '';
+$hmtb_bar_height            = ( '' !== get_option('hmtb_bar_height') ) ? get_option('hmtb_bar_height') : 50;
+$hmtb_content_width         = ( '' !== get_option('hmtb_content_width' ) ) ? get_option('hmtb_content_width') : 500;
+$hmtb_message_content       = ( '' !== get_option('hmtb_message_content') ) ? get_option('hmtb_message_content') : 'There is no message to display. Please add one.';
+$hmtb_button_text           = ( '' !== get_option('hmtb_button_text') ) ? get_option('hmtb_button_text') : 'Button Text';
+$hmtb_button_uri            = ( '' !== get_option('hmtb_button_uri') ) ? get_option('hmtb_button_uri') : '#';
+$hmtb_button_url_is_external = ( 'true' === get_option('hmtb_button_url_is_external') ) ? 'target="_blank"' : '';
+$hmtb_button_url_nofollow   = ( 'true' === get_option('hmtb_button_url_nofollow') ) ? 'rel="nofollow"' : '';
 
-$msgColor = (get_option( HMTB_PREFIX . 'message_color')!='') ? get_option( HMTB_PREFIX . 'message_color') : '#FFF';
-
-$hmtbButtonTxt  = (get_option( HMTB_PREFIX . 'button_text')!='') ? sanitize_text_field(get_option( HMTB_PREFIX . 'button_text')) : 'Button Text';
-$btnClr = (get_option( HMTB_PREFIX . 'button_color')!='') ? get_option( HMTB_PREFIX . 'button_color') : '#0085ba';
-$hmtbButtonUrl = (get_option( HMTB_PREFIX . 'button_uri')!='') ? sanitize_text_field(get_option( HMTB_PREFIX . 'button_uri')) : '#';
-$hmtbButtonUrlTarget = (get_option( HMTB_PREFIX . 'button_url_is_external') == true) ? ' target="_blank"' : '';
-$hmtbButtonUrlNofollow = (get_option( HMTB_PREFIX . 'button_url_nofollow') == true) ? ' rel="nofollow"' : '';
-$hmtbBtnTxtClr = (get_option( HMTB_PREFIX . 'button_text_color')!='') ? get_option( HMTB_PREFIX . 'button_text_color') : '#FFF';
-$hmtbBtnFntWeight = (get_option( HMTB_PREFIX . 'button_font_weight')!='') ? get_option( HMTB_PREFIX . 'button_font_weight') : 'normal';
+// Styling Settings
+$hmtb_background_color      = ( '' !== get_option('hmtb_background_color') ) ? get_option('hmtb_background_color') : '#F6CA0F';
+$hmtb_message_color         = ( '' !== get_option('hmtb_message_color') ) ? get_option('hmtb_message_color') : '#000000';
+$hmtb_msg_font_size         = ( '' !== get_option('hmtb_msg_font_size') ) ? get_option('hmtb_msg_font_size') : 12;
+$hmtb_button_color          = ( '' !== get_option('hmtb_button_color') ) ? get_option('hmtb_button_color') : '#d60000';
+$hmtb_button_text_color     = ( '' !== get_option('hmtb_button_text_color') ) ? get_option('hmtb_button_text_color') : '#FFFFFF';
+$hmtb_button_text_size      = ( '' !== get_option('hmtb_button_text_size') ) ? get_option('hmtb_button_text_size') : 12;
+$hmtb_button_font_weight    = ( '' !== get_option('hmtb_button_font_weight') ) ? get_option('hmtb_button_font_weight') : 'normal';
 ?>
 
 <style type="text/css">
+<?php
+if( ( 'hmtb-fixed' === $hmtb_display_type ) && ( 'top' === $hmtb_display_option ) ) {
+    ?>
+    body {
+        padding-top: <?php echo $hmtb_bar_height; ?>px!important;
+    }
+    @media(max-width:500px) {
+        body {
+            padding-top: <?php echo ( $hmtb_bar_height * 2 ); ?>px!important;
+        }
+    }
+    <?php
+}
+?>
 #hmtb-top-bar, #hmtb-footer-bar {
-    background: <?php echo $bg; ?>;
-    min-height: <?php echo $barHeight; ?>px;
-    color: <?php echo $msgColor; ?>;
+    background: <?php echo $hmtb_background_color; ?>!important;
+    min-height: <?php echo $hmtb_bar_height; ?>px;
+    color: <?php echo $hmtb_message_color; ?>;
 }
-<?php if('hide' == get_option('hmtb_scroll_hide')) { ?>
-#hmtb-top-bar.hide, #hmtb-footer-bar.hide {
-    height: 0px;
-    opacity:0.5;
-
-    -moz-transition:all 0.5s ease-in-out;
-    -o-transition:all 0.5s ease-in-out;
-    transition:all 0.5s ease-in-out;
-    -webkit-transition:all 0.5s ease-in-out;
+.hmtb-content-wrapper {
+    color: <?php echo $hmtb_message_color; ?>!important;
+    grid-template-columns: auto 150px;
+    max-width: <?php echo esc_attr( $hmtb_content_width ); ?>px;
+    min-height: <?php echo $hmtb_bar_height; ?>px;
 }
-#hmtb-top-bar.hide { top:-<?php echo $barHeight; ?>px; }
-#hmtb-footer-bar.hide { bottom:-<?php echo $barHeight; ?>px; }
-<?php } ?>
-.txtType { color: <?php echo $msgColor; ?>; }
+.hmtb-msg-container {
+  font-size: <?php echo esc_attr( $hmtb_msg_font_size ); ?>px;
+}
+<?php 
+if( 'hmtb-hide' === $hmtb_scroll_hide ) {
+    ?>
+    #hmtb-top-bar.hmtb-overlap.hmtb-hide, 
+    #hmtb-footer-bar.hmtb-overlap.hmtb-hide {
+        height: 0px;
+        opacity:0.5;
+        -moz-transition:all 0.5s ease-in-out;
+        -o-transition:all 0.5s ease-in-out;
+        transition:all 0.5s ease-in-out;
+        -webkit-transition:all 0.5s ease-in-out;
+    }
+    #hmtb-top-bar.hmtb-overlap.hmtb-hide { top:-<?php echo esc_attr( $hmtb_bar_height ); ?>px; }
+    #hmtb-footer-bar.hmtb-overlap.hmtb-hide { bottom:-<?php echo esc_attr( $hmtb_bar_height ); ?>px; }
+    <?php 
+} 
+?>
+.txtType { color: <?php echo $hmtb_message_color; ?>; }
 .hmtb-btn-container a.hmtb-button {
-    background: <?php echo $btnClr; ?>;
-    border-color: <?php echo $btnClr; ?> <?php echo $btnClr; ?> <?php echo $btnClr; ?>;
-    box-shadow: 0 1px 0 <?php echo $btnClr; ?>;
-    text-shadow: 0 -1px 1px <?php echo $btnClr; ?>,1px 0 1px <?php echo $btnClr; ?>,0 1px 1px <?php echo $btnClr; ?>,-1px 0 1px <?php echo $btnClr; ?>;
-    color: <?php echo $hmtbBtnTxtClr; ?>;
-    font-weight: <?php echo $hmtbBtnFntWeight; ?>;
+    background: <?php echo esc_attr( $hmtb_button_color ); ?>;
+    border-color: <?php echo esc_attr( $hmtb_button_color ); ?>;
+    box-shadow: 0 1px 0 <?php echo esc_attr( $hmtb_button_color ); ?>;
+    text-shadow: 0 -1px 1px <?php echo esc_attr( $hmtb_button_color ); ?>, 1px 0 1px <?php echo esc_attr( $hmtb_button_color ); ?>, 0 1px 1px <?php echo esc_attr( $hmtb_button_color ); ?>,-1px 0 1px <?php echo esc_attr( $hmtb_button_color ); ?>;
+    color: <?php echo $hmtb_button_text_color; ?>;
+    font-weight: <?php echo $hmtb_button_font_weight; ?>;
+}
+.hmtb-btn-container a.hmtb-button span.hmtb-btn-text {
+    font-size: <?php echo esc_attr( $hmtb_button_text_size ); ?>px !important;
 }
 </style>
 
-<?php if(get_option( HMTB_PREFIX . 'display_option') == "top") { ?>
-<div id="hmtb-top-bar">
-    <div class="hmtb-msg-container">
-        <?php echo (null != get_option(HMTB_PREFIX . 'message_content')) ? wp_kses_post(get_option( HMTB_PREFIX . 'message_content')) : esc_attr('There is no message to display right now.'); ?>
-	</div>
-    <div class="hmtb-btn-container">
-        <a href="<?php echo esc_url( $hmtbButtonUrl ); ?>" class="hmtb-button" <?php echo $hmtbButtonUrlTarget . $hmtbButtonUrlNofollow; ?>>
-            <?php echo esc_html( $hmtbButtonTxt ); ?>
-        </a>
-    </div>
-</div>
-<?php } ?>
+<?php
+$hmtbHtml = '';
+$hmtbHtml .= '<div class="hmtb-content-wrapper">';
+/* 
+if( '' != $hmtb_image ) :
+$hmtbHtml .= '<div class="hmtb-img-container">';
+    $hmtbHtml .= '<img src="' . esc_attr($hmtb_image) . '">';
+$hmtbHtml .= '</div>';
+endif; 
+*/
+$hmtbHtml .= '<div class="hmtb-msg-container">' . wp_kses_post( $hmtb_message_content ) . '</div>';
+$hmtbHtml .= '<div class="hmtb-btn-container">';
+$hmtbHtml .= '<a href="' . esc_url( $hmtb_button_uri ) . '" class="hmtb-button" ' . $hmtb_button_url_is_external . ' ' . $hmtb_button_url_nofollow . '>';
+$hmtbHtml .= '<span class="hmtb-btn-text">' . esc_html( $hmtb_button_text ) . '</span>';
+/*
+if($hmtbButtonSubTxt != '') :
+$hmtbHtml .= '<span class="hmtb-sub-btn-text">' . esc_html($hmtbButtonSubTxt) . '</span>';
+endif;
+*/
+$hmtbHtml .= '</a>';
+$hmtbHtml .= '</div>';
+//$hmtbHtml .= '<span class="hmtb-close"><i class="fas fa-times-circle"></i></span>';
+$hmtbHtml .= '</div>';
 
-<?php if(get_option( HMTB_PREFIX . 'display_option') == "bottom") { ?>
-<div id="hmtb-footer-bar">
-    <div class="hmtb-msg-container">
-        <?php echo (null != get_option(HMTB_PREFIX . 'message_content')) ? wp_kses_post(get_option( HMTB_PREFIX . 'message_content')) : esc_attr('There is no message to display right now.'); ?>
-	</div>
-    <div class="hmtb-btn-container">
-        <a href="<?php echo esc_url( $hmtbButtonUrl ); ?>" class="hmtb-button" <?php echo $hmtbButtonUrlTarget . $hmtbButtonUrlNofollow; ?>>
-            <?php echo esc_html( $hmtbButtonTxt ); ?>
-        </a>
+if( 'top' === $hmtb_display_option ) { 
+    ?>
+    <div id="hmtb-top-bar" class="<?php echo esc_attr( $hmtb_display_type ); ?>">
+        <?php echo $hmtbHtml; ?>
     </div>
-</div>
-<?php } ?>
+    <?php 
+}
+
+if( 'bottom' === $hmtb_display_option ) { 
+    ?>
+    <div id="hmtb-footer-bar" class="<?php echo esc_attr( $hmtb_display_type ); ?>">
+        <?php echo $hmtbHtml; ?>
+    </div>
+    <?php 
+} 
+?>

@@ -3,7 +3,7 @@ Contributors: mhmrajib
 Donate link: https://www.paypal.me/mhmrajib/2
 Tags: bar, topbar, bottom bar, display message, notification
 Requires at least: 4.6
-Tested up to: 5.3.2
+Tested up to: 5.4.2
 Stable tag: 1.4
 Requires PHP: 5.6
 License: GPL-2.0 or later
@@ -19,45 +19,60 @@ This Tiny Bar plugin display a bar to your website. You can place it top or bott
 
 * Easy to install
 * Fully integrated in WordPress
+* Display Type Pption: Fixed or Overlap
 * Bar Display Position: Top or Bottom
-* Stay visible or hide when scrolling
-* Bar Background Color Option
+* Stay Visible Or Hide When Scrolling
 * Bar Height Option
-* Message Content (accept html)
-* Message Color Options
+* Content Width Option
+* Message Content Option (Accept Html)
 * Button Text Option
-* Button Text Color Option
-* Button Text Font Weight Option
-* Button Color Option
 * Button Url Option
 * Button Url Target Option
 * Button Url Nofollow Option
 
+** Styling Options **
+
+* Bar Background Color
+* Message Font Color
+* Message Font Size
+* Button Color
+* Button Font Color
+* Button Font Weight
 
 
 **📋 Translation Ready:**
+
 * POT file included (/languages/)
 * Sample bengoli translation included
 
 
 **Responsive**
 
+**Support / Live Chat**
+
+[Support or Live Chat](http://hossnimubarak.com/)
 
 **📋 Feedback/Rating:**
-If you find this plugin helpful, feel free to give us your valuable review and share this plugin with friends and others. This will help us to improve this plugin.
+
+If you find this plugin helpful, feel free to give us your valuable review. Rate us and share this plugin with your friends and others. This will motivate us and help us to grow.
 
 
 **🔥 Other Plugins from [HM Plugins](http://www.hossnimubarak.com)**
 
-👉 [HM Product Catalog](https://wordpress.org/plugins/hm-product-catalog/) HM Product Catalog
-👉 [WP Books Gallery](https://wordpress.org/plugins/wp-books-gallery/) WP Books Gallery
-👉 [HM – Cool Author Box](https://wordpress.org/plugins/hm-cool-author-box-widget/) Author Box plugin
-👉 [Worldwide Breaking News Headlines](https://wordpress.org/plugins/worldwide-breaking-news-headlines/) Breaking News, Headlines plugin
+👉 [Worldwide Breaking News Headlines](https://wordpress.org/plugins/worldwide-breaking-news-headlines/) Breaking News, Headlines Widget Plugin
+👉 [WP Top News](https://wordpress.org/plugins/wp-top-news/) Top News, Breaking News, Headlines Shortcoded Plugin
+👉 [Tiny Bar](https://wordpress.org/plugins/tiny-bar/) Display a bar with a message and button at the Top or Bottom of your page
+👉 [WP Books Gallery](https://wordpress.org/plugins/wp-books-gallery/) Display Books Gallery with shortcoded
+👉 [WordPress Stripe Donation](https://wordpress.org/plugins/wp-stripe-donation/) This plugin allows you to collect donations via Stripe
+👉 [HM – Cool Author Box](https://wordpress.org/plugins/hm-cool-author-box-widget/) Author Box plugin widget to display author info
+👉 [HM Resume Manager](https://wordpress.org/plugins/hm-resume-manager/) A resume manager plugin
+👉 [HM Product Catalog](https://wordpress.org/plugins/hm-product-catalog/) A product catalog plugin
+👉 [HM Wc Product Advertiser](https://wordpress.org/plugins/hm-wc-product-advertiser/) Wocommerce Product Advertiser
 👉 [WP Scroll To Post](https://wordpress.org/plugins/wp-scroll-to-post/) Display random post(Single) at the bottom right corner
 👉 [HM Recent Posts Widget](https://wordpress.org/plugins/hm-recent-posts-widget/) Ticker Post plugin
 👉 [WP Alert Bars](https://wordpress.org/plugins/wp-alert-bars/) Notification/Alert box Plugin in Post/Page
-👉 [WP Top News](https://wordpress.org/plugins/wp-top-news/) Top News, Breaking News, Headlines Plugin
-👉 [HM Wc Product Advertiser](https://wordpress.org/plugins/hm-wc-product-advertiser/) Display WC prodcuts when scroll
+👉 [FaceBook LikeBox](https://wordpress.org/plugins/hm-simple-facebook-page/) A FaceBook LikeBox Widget
+👉 [WP Display FAQ](https://wordpress.org/plugins/wp-display-faq/) Display FAQs in your page
 
 
 == Installation ==
@@ -101,6 +116,15 @@ Yes, we are working on it. Please stay with us.
 
 
 == Changelog ==
+
+= 1.4 =
+* Display type fixed/overlap option added
+* Content width option added
+* Message Font Size option added
+* Button Font Size Option Added
+* Some Css fixed
+* Code updated
+* Minor Bug Fixes
 
 = 1.3 =
 * Admin Settings Layout Changes to Content Settings and Styles Settings
