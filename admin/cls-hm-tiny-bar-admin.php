@@ -11,6 +11,7 @@ class HMTB_Admin
 	private $hmtb_assets_prefix;
 
 	function __construct( $version ) {
+
 		$this->hmtb_version = $version;
 		$this->hmtb_option_group = HMTB_PREFIX . 'options_group';
 		$this->hmtb_option_group_styles = HMTB_PREFIX . 'option_group_styles';
@@ -55,7 +56,9 @@ class HMTB_Admin
 	/**
 	 *	Loading admin panel assets
 	 */
-	public function hmtb_enqueue_style() {
+	function hmtb_enqueue_style() {
+
+		wp_enqueue_style('wp-color-picker');
 
 		wp_enqueue_style(
 			$this->hmtb_assets_prefix . 'admin-style',
@@ -64,18 +67,19 @@ class HMTB_Admin
 			$this->hmtb_version,
 			FALSE
 		);
-		wp_enqueue_style('wp-color-picker');
 	}
 
 	/**
 	 *	Loading admin panel script
 	 */
-	public function hmtb_enqueue_script() {
+	function hmtb_enqueue_script() {
 
-		if (!wp_script_is('jquery')) {
+		if ( ! wp_script_is('jquery') ) {
 			wp_enqueue_script('jquery');
 		}
+
 		wp_enqueue_script('wp-color-picker');
+
 		wp_enqueue_script(
 			$this->hmtb_assets_prefix . 'admin-script',
 			HMTB_ASSETS . 'js/' . $this->hmtb_assets_prefix . 'admin-script.js',
@@ -88,12 +92,12 @@ class HMTB_Admin
 	/**
 	 *	Loading admin panel view/forms
 	 */
-	public function hmtb_content_section() {
+	function hmtb_content_section() {
 
 		require_once HMTB_PATH . 'admin/view/' . $this->hmtb_assets_prefix . 'content-settings.php';
 	}
 
-	public function hmtb_styles_section() {
+	function hmtb_styles_section() {
 
 		require_once HMTB_PATH . 'admin/view/' . $this->hmtb_assets_prefix . 'styles-settings.php';
 	}
@@ -101,30 +105,30 @@ class HMTB_Admin
 	/**
 	 *	Loading register settings
 	 */
-	public function hmtb_register_settings() {
+	function hmtb_register_settings() {
 
-		add_settings_section( $this->hmtb_option_group, esc_html__( '', HMTB_TEXT_DOMAIN ), null, 'hmtb-content-section' );
+		add_settings_section( $this->hmtb_option_group, __( '', HMTB_TEXT_DOMAIN ), null, 'hmtb-content-section' );
 		// ==================================
-		add_settings_field( 'hmtb_display_type', esc_html__( 'Display Type', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_display_type' ), 'hmtb-content-section', $this->hmtb_option_group );
-		add_settings_field( 'hmtb_display_option', esc_html__( 'Display Position', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_display_option' ), 'hmtb-content-section', $this->hmtb_option_group );
-		add_settings_field( 'hmtb_scroll_hide', esc_html__( 'Hide When Scroll?', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_scroll_hide' ), 'hmtb-content-section', $this->hmtb_option_group );
-		add_settings_field( 'hmtb_bar_height', esc_html__( 'Bar Height', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_bar_height' ), 'hmtb-content-section', $this->hmtb_option_group );
-		add_settings_field( 'hmtb_content_width', esc_html__( 'Content Width', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_content_width' ), 'hmtb-content-section', $this->hmtb_option_group );
-		add_settings_field( 'hmtb_message_content', esc_html__( 'Message / Content', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_message_content' ), 'hmtb-content-section', $this->hmtb_option_group );
-		add_settings_field( 'hmtb_button_text', esc_html__( 'Button Text', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_text' ), 'hmtb-content-section', $this->hmtb_option_group );
-		add_settings_field( 'hmtb_button_uri', esc_html__( 'Button URL', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_uri' ), 'hmtb-content-section', $this->hmtb_option_group );
-		add_settings_field( 'hmtb_button_url_is_external', esc_html__( 'Button URL Is External?', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_url_is_external' ), 'hmtb-content-section', $this->hmtb_option_group );
-		add_settings_field( 'hmtb_button_url_nofollow', esc_html__( 'Button URL Nofollow?', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_url_nofollow' ), 'hmtb-content-section', $this->hmtb_option_group );
+		add_settings_field( 'hmtb_display_type', __( 'Display Type', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_display_type' ), 'hmtb-content-section', $this->hmtb_option_group );
+		add_settings_field( 'hmtb_display_option', __( 'Display Position', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_display_option' ), 'hmtb-content-section', $this->hmtb_option_group );
+		add_settings_field( 'hmtb_scroll_hide', __( 'Hide When Scroll?', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_scroll_hide' ), 'hmtb-content-section', $this->hmtb_option_group );
+		add_settings_field( 'hmtb_bar_height', __( 'Bar Height', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_bar_height' ), 'hmtb-content-section', $this->hmtb_option_group );
+		add_settings_field( 'hmtb_content_width', __( 'Content Width', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_content_width' ), 'hmtb-content-section', $this->hmtb_option_group );
+		add_settings_field( 'hmtb_message_content', __( 'Message / Content', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_message_content' ), 'hmtb-content-section', $this->hmtb_option_group );
+		add_settings_field( 'hmtb_button_text', __( 'Button Text', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_text' ), 'hmtb-content-section', $this->hmtb_option_group );
+		add_settings_field( 'hmtb_button_uri', __( 'Button URL', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_uri' ), 'hmtb-content-section', $this->hmtb_option_group );
+		add_settings_field( 'hmtb_button_url_is_external', __( 'Button URL Is External?', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_url_is_external' ), 'hmtb-content-section', $this->hmtb_option_group );
+		add_settings_field( 'hmtb_button_url_nofollow', __( 'Button URL Nofollow?', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_url_nofollow' ), 'hmtb-content-section', $this->hmtb_option_group );
 
 		// ==================================
-		add_settings_section( $this->hmtb_option_group_styles, esc_html__( '', HMTB_TEXT_DOMAIN ), null, 'hmtb-styles-section' );
-		add_settings_field( 'hmtb_background_color', esc_html__( 'Bar Background Color', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_background_color' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
-		add_settings_field( 'hmtb_message_color', esc_html__( 'Message Font Color', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_message_color' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
-		add_settings_field( 'hmtb_msg_font_size', esc_html__( 'Message Font Size', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_msg_font_size' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
-		add_settings_field( 'hmtb_button_color', esc_html__( 'Button Color', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_color' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
-		add_settings_field( 'hmtb_button_text_color', esc_html__( 'Button Font Color', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_text_color' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
-		add_settings_field( 'hmtb_button_text_size', esc_html__( 'Button Font Size', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_text_size' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
-		add_settings_field( 'hmtb_button_font_weight', esc_html__( 'Button Font Weight', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_font_weight' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
+		add_settings_section( $this->hmtb_option_group_styles, __( '', HMTB_TEXT_DOMAIN ), null, 'hmtb-styles-section' );
+		add_settings_field( 'hmtb_background_color', __( 'Bar Background Color', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_background_color' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
+		add_settings_field( 'hmtb_message_color', __( 'Message Font Color', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_message_color' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
+		add_settings_field( 'hmtb_msg_font_size', __( 'Message Font Size', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_msg_font_size' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
+		add_settings_field( 'hmtb_button_color', __( 'Button Color', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_color' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
+		add_settings_field( 'hmtb_button_text_color', __( 'Button Font Color', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_text_color' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
+		add_settings_field( 'hmtb_button_text_size', __( 'Button Font Size', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_text_size' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
+		add_settings_field( 'hmtb_button_font_weight', __( 'Button Font Weight', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_font_weight' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
 
 		// Content Settings
 		register_setting( $this->hmtb_option_group, 'hmtb_display_type' );
@@ -150,21 +154,21 @@ class HMTB_Admin
 
 	function hmtb_display_type() {
 		?>
-		<input type="radio" name="hmtb_display_type" class="hmtb_display_type" value="hmtb-fixed" <?php echo ( 'hmtb-overlap' !== get_option('hmtb_display_type') ) ? 'checked' : ''; ?> >
-		<label for="default-templates"><span></span><?php esc_html_e( 'Fixed', HMTB_TEXT_DOMAIN ); ?></label>
+		<input type="radio" name="hmtb_display_type" id="hmtb_display_type_fixed" value="hmtb-fixed" <?php echo ( 'hmtb-overlap' !== get_option('hmtb_display_type') ) ? 'checked' : ''; ?> >
+		<label for="hmtb_display_type_fixed"><span></span><?php _e( 'Fixed', HMTB_TEXT_DOMAIN ); ?></label>
 			&nbsp;&nbsp;
-		<input type="radio" name="hmtb_display_type" class="hmtb_display_type" value="hmtb-overlap" <?php echo ( 'hmtb-overlap' === get_option('hmtb_display_type') ) ? 'checked' : ''; ?> >
-		<label for="csutom-design"><span></span><?php esc_html_e( 'Overlap', HMTB_TEXT_DOMAIN ); ?></label>
+		<input type="radio" name="hmtb_display_type" id="hmtb_display_type_overlap" value="hmtb-overlap" <?php echo ( 'hmtb-overlap' === get_option('hmtb_display_type') ) ? 'checked' : ''; ?> >
+		<label for="hmtb_display_type_overlap"><span></span><?php _e( 'Overlap', HMTB_TEXT_DOMAIN ); ?></label>
 		<?php
 	}
 
 	function hmtb_display_option() {
 		?>
-		<input type="radio" name="hmtb_display_option" class="hmtb_display_option" value="top" <?php echo ( 'bottom' !== get_option('hmtb_display_option') ) ? 'checked' : ''; ?> >
-		<label for="default-templates"><span></span><?php esc_html_e( 'Top', HMTB_TEXT_DOMAIN ); ?></label>
+		<input type="radio" name="hmtb_display_option" id="hmtb_display_option_top" value="top" <?php echo ( 'bottom' !== get_option('hmtb_display_option') ) ? 'checked' : ''; ?> >
+		<label for="hmtb_display_option_top"><span></span><?php _e( 'Top', HMTB_TEXT_DOMAIN ); ?></label>
 			&nbsp;&nbsp;
-		<input type="radio" name="hmtb_display_option" class="hmtb_display_option" value="bottom" <?php echo ( 'bottom' === get_option('hmtb_display_option') ) ? 'checked' : ''; ?> >
-		<label for="csutom-design"><span></span><?php esc_html_e( 'Bottom', HMTB_TEXT_DOMAIN ); ?></label>
+		<input type="radio" name="hmtb_display_option" id="hmtb_display_option_bottom" value="bottom" <?php echo ( 'bottom' === get_option('hmtb_display_option') ) ? 'checked' : ''; ?> >
+		<label for="hmtb_display_option_bottom"><span></span><?php _e( 'Bottom', HMTB_TEXT_DOMAIN ); ?></label>
 		<?php
 	}
 
@@ -176,15 +180,15 @@ class HMTB_Admin
 
 	function hmtb_bar_height() {
 		?>
-		<input class="gui-input options responsive width" type="number" min="12" max="150" step="1" name="hmtb_bar_height" value="<?php echo esc_attr( get_option('hmtb_bar_height') ); ?>">
-		<label class="field-icon"><?php esc_html_e('px', HMTB_TEXT_DOMAIN); ?></label>
+		<input class="gui-input options responsive width" type="number" min="12" max="150" step="1" name="hmtb_bar_height" value="<?php esc_attr_e( get_option('hmtb_bar_height') ); ?>">
+		<label class="field-icon"><?php _e('px', HMTB_TEXT_DOMAIN); ?></label>
 		<?php
 	}
 
 	function hmtb_content_width() {
 		?>
-		<input class="gui-input options responsive width" type="number" min="500" max="1500" step="1" name="hmtb_content_width" value="<?php echo esc_attr( get_option('hmtb_content_width' ) ); ?>" >
-		<label class="field-icon"><?php esc_attr_e( 'px', HMTB_TEXT_DOMAIN ); ?></label>
+		<input class="gui-input options responsive width" type="number" min="500" max="1500" step="1" name="hmtb_content_width" value="<?php esc_attr_e( get_option('hmtb_content_width' ) ); ?>" >
+		<label class="field-icon"><?php _e( 'px', HMTB_TEXT_DOMAIN ); ?></label>
 		<?php
 	}
 
@@ -192,21 +196,21 @@ class HMTB_Admin
 		?>
 		<textarea cols="40" style="min-height:100px;" name="hmtb_message_content"><?php echo stripslashes( get_option('hmtb_message_content')); ?></textarea>
 		<br>
-		<code><?php esc_html_e('Accept HTML, like: H1, H2, H3, P etc.', HMTB_TEXT_DOMAIN); ?></code>
+		<code><?php _e('Accept HTML, like: H1, H2, H3, P etc.', HMTB_TEXT_DOMAIN); ?></code>
 		<?php
 	}
 
 	function hmtb_button_text() {
 		?>
-		<input type="text" name="hmtb_button_text" class="hmtb_button_text" id="hmtb_button_text" value="<?php echo esc_attr( get_option('hmtb_button_text') ); ?>" >
+		<input type="text" name="hmtb_button_text" class="hmtb_button_text" id="hmtb_button_text" value="<?php esc_attr_e( get_option('hmtb_button_text') ); ?>" >
 		<?php
 	}
 
 	function hmtb_button_uri() {
 		?>
-		<input type="text" name="hmtb_button_uri" class="hmtb_button_uri" id="hmtb_button_uri" style="width:300px;" value="<?php echo esc_attr( get_option('hmtb_button_uri') ); ?>" >
+		<input type="text" name="hmtb_button_uri" class="hmtb_button_uri" id="hmtb_button_uri" style="width:300px;" value="<?php esc_attr_e( get_option('hmtb_button_uri') ); ?>" >
 		<br>
-		<code><?php esc_html_e('Start with http:// or https://', HMTB_TEXT_DOMAIN); ?></code>
+		<code><?php _e('Start with http:// or https://', HMTB_TEXT_DOMAIN); ?></code>
 		<?php
 	}
 
@@ -227,51 +231,51 @@ class HMTB_Admin
 	*/
 	function hmtb_background_color() {
 		?>
-		<input class="hmtb_background_color hmtb-wp-color" type="text" name="hmtb_background_color" id="hmtb_background_color" value="<?php echo esc_attr( get_option('hmtb_background_color') ); ?>" >
+		<input class="hmtb_background_color hmtb-wp-color" type="text" name="hmtb_background_color" id="hmtb_background_color" value="<?php esc_attr_e( get_option('hmtb_background_color') ); ?>" >
 		<div id="colorpicker"></div>
 		<?php
 	}
 
 	function hmtb_message_color() {
 		?>
-		<input class="hmtb_message_color hmtb-wp-color" type="text" name="hmtb_message_color" id="hmtb_message_color" value="<?php echo esc_attr( get_option('hmtb_message_color') ); ?>" >
+		<input class="hmtb_message_color hmtb-wp-color" type="text" name="hmtb_message_color" id="hmtb_message_color" value="<?php esc_attr_e( get_option('hmtb_message_color') ); ?>" >
 		<div id="colorpicker"></div>
 		<?php
 	}
 
 	function hmtb_msg_font_size() {
 		?>
-		<input class="gui-input options responsive width" type="number" min="10" max="48" step="1" name="hmtb_msg_font_size" value="<?php echo esc_attr( get_option('hmtb_msg_font_size') ); ?>" >
-		<label class="field-icon"><?php esc_attr_e( 'px', HMTB_TEXT_DOMAIN ); ?></label>
+		<input class="gui-input options responsive width" type="number" min="10" max="48" step="1" name="hmtb_msg_font_size" value="<?php esc_attr_e( get_option('hmtb_msg_font_size') ); ?>" >
+		<label class="field-icon"><?php _e( 'px', HMTB_TEXT_DOMAIN ); ?></label>
 		<?php
 	}
 
 	function hmtb_button_color() {
 		?>
-		<input class='hmtb_button_color hmtb-wp-color' type='text' name='hmtb_button_color' id='hmtb_button_color' value='<?php echo esc_attr( get_option(HMTB_PREFIX . 'button_color') ); ?>'>
+		<input class='hmtb_button_color hmtb-wp-color' type='text' name='hmtb_button_color' id='hmtb_button_color' value='<?php esc_attr_e( get_option(HMTB_PREFIX . 'button_color') ); ?>'>
 		<div id='colorpicker'></div>
 		<?php
 	}
 
 	function hmtb_button_text_color() {
 		?>
-		<input class="hmtb_button_text_color hmtb-wp-color" type="text" name="hmtb_button_text_color" id="hmtb_button_text_color" value="<?php echo esc_attr( get_option(HMTB_PREFIX . 'button_text_color') ); ?>" >
+		<input class="hmtb_button_text_color hmtb-wp-color" type="text" name="hmtb_button_text_color" id="hmtb_button_text_color" value="<?php esc_attr_e( get_option(HMTB_PREFIX . 'button_text_color') ); ?>" >
 		<div id='colorpicker'></div>
 		<?php
 	}
 
 	function hmtb_button_text_size() {
 		?>
-		<input class="gui-input options responsive width" type="number" min="10" max="48" step="1" name="hmtb_button_text_size" value="<?php echo esc_attr( get_option('hmtb_button_text_size') ); ?>" >
-		<label class="field-icon"><?php esc_attr_e( 'px', HMTB_TEXT_DOMAIN ); ?></label>
+		<input class="gui-input options responsive width" type="number" min="10" max="48" step="1" name="hmtb_button_text_size" value="<?php esc_attr_e( get_option('hmtb_button_text_size') ); ?>" >
+		<label class="field-icon"><?php _e( 'px', HMTB_TEXT_DOMAIN ); ?></label>
 		<?php
 	}
 
 	function hmtb_button_font_weight() {
 		?>
 		<select name="hmtb_button_font_weight" class="hmtb_button_font_weight" id="hmtb_button_font_weight">
-			<option value="normal" <?php echo ( 'noraml' == get_option('hmtb_button_font_weight' ) ) ? 'selected' : ''; ?> ><?php esc_html_e('Normal', HMTB_TEXT_DOMAIN); ?></option>
-			<option value="bold" <?php echo ( 'bold' === get_option('hmtb_button_font_weight' ) ) ? 'selected' : ''; ?> ><?php esc_html_e('Bold', HMTB_TEXT_DOMAIN); ?></option>
+			<option value="normal" <?php echo ( 'noraml' == get_option('hmtb_button_font_weight' ) ) ? 'selected' : ''; ?> ><?php _e('Normal', HMTB_TEXT_DOMAIN); ?></option>
+			<option value="bold" <?php echo ( 'bold' === get_option('hmtb_button_font_weight' ) ) ? 'selected' : ''; ?> ><?php _e('Bold', HMTB_TEXT_DOMAIN); ?></option>
 		</select>
 		<?php
 	}

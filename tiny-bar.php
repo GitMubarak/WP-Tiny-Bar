@@ -27,7 +27,6 @@ require_once HMTB_PATH . 'inc/' . HMTB_CLS_PREFIX . '-master.php';
 $hmtb = new HMTB_Master();
 $hmtb->HMTB_run();
 
-
 register_activation_hook(__FILE__, array($hmtb, HMTB_PREFIX . 'register_settings'));
 
 // Donation link to plugin description
@@ -43,3 +42,5 @@ function hmtb_plugin_row_meta( $links, $file ) {
     }
     return (array) $links;
 }
+
+register_deactivation_hook(__FILE__, array($hmtb, HMTB_PREFIX . 'unregister_settings'));

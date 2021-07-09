@@ -4,7 +4,7 @@ Donate link: https://www.paypal.me/mhmrajib
 Tags: bar, topbar, bottom bar, display message, notification
 Requires at least: 5.0
 Tested up to: 5.7.2
-Stable tag: 1.4
+Stable tag: 1.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -121,6 +121,9 @@ Yes, we are working on it. Please stay with us.
 
 = 1.5 =
 * Code optimized
+* Default value Set
+* Fixed position issue fixed for top
+* CSS fixed
 
 = 1.4 =
 * Display type fixed/overlap option added

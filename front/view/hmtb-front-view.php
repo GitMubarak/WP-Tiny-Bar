@@ -1,30 +1,30 @@
 <?php
 $hmtb_front_prefix = substr(HMTB_PREFIX, 0, -1) . '-';
 
-$hmtb_display_type          = ( null !== get_option('hmtb_display_type') ) ? get_option('hmtb_display_type') : 'hmtb-fixed';
-$hmtb_display_option        = ( '' !== get_option('hmtb_display_option') ) ? get_option('hmtb_display_option') : 'top';
-$hmtb_scroll_hide           = ( '' !== get_option('hmtb_scroll_hide') ) ? get_option('hmtb_scroll_hide') : '';
-$hmtb_bar_height            = ( '' !== get_option('hmtb_bar_height') ) ? get_option('hmtb_bar_height') : 50;
-echo $hmtb_content_width         = ( null !== get_option('hmtb_content_width' ) ) ? get_option('hmtb_content_width') : 500;
-$hmtb_message_content       = ( '' !== get_option('hmtb_message_content') ) ? get_option('hmtb_message_content') : 'There is no message to display. Please add one.';
-$hmtb_button_text           = ( '' !== get_option('hmtb_button_text') ) ? get_option('hmtb_button_text') : 'Button Text';
-$hmtb_button_uri            = ( '' !== get_option('hmtb_button_uri') ) ? get_option('hmtb_button_uri') : '#';
+$hmtb_display_type          = get_option('hmtb_display_type') ? get_option('hmtb_display_type') : 'hmtb-fixed';
+$hmtb_display_option        = get_option('hmtb_display_option') ? get_option('hmtb_display_option') : 'top';
+$hmtb_scroll_hide           = get_option('hmtb_scroll_hide') ? get_option('hmtb_scroll_hide') : '';
+$hmtb_bar_height            = get_option('hmtb_bar_height') ? get_option('hmtb_bar_height') : 50;
+$hmtb_content_width    = get_option('hmtb_content_width') ? get_option('hmtb_content_width') : 500;
+$hmtb_message_content       = get_option('hmtb_message_content') ? get_option('hmtb_message_content') : 'There is no message to display. Please add one.';
+$hmtb_button_text           = get_option('hmtb_button_text') ? get_option('hmtb_button_text') : 'Button Text';
+$hmtb_button_uri            = get_option('hmtb_button_uri') ? get_option('hmtb_button_uri') : '#';
 $hmtb_button_url_is_external = ( 'true' === get_option('hmtb_button_url_is_external') ) ? 'target="_blank"' : '';
 $hmtb_button_url_nofollow   = ( 'true' === get_option('hmtb_button_url_nofollow') ) ? 'rel="nofollow"' : '';
 
 // Styling Settings
-$hmtb_background_color      = ( '' !== get_option('hmtb_background_color') ) ? get_option('hmtb_background_color') : '#F6CA0F';
-$hmtb_message_color         = ( '' !== get_option('hmtb_message_color') ) ? get_option('hmtb_message_color') : '#000000';
-$hmtb_msg_font_size         = ( '' !== get_option('hmtb_msg_font_size') ) ? get_option('hmtb_msg_font_size') : 12;
-$hmtb_button_color          = ( '' !== get_option('hmtb_button_color') ) ? get_option('hmtb_button_color') : '#d60000';
-$hmtb_button_text_color     = ( '' !== get_option('hmtb_button_text_color') ) ? get_option('hmtb_button_text_color') : '#FFFFFF';
-$hmtb_button_text_size      = ( '' !== get_option('hmtb_button_text_size') ) ? get_option('hmtb_button_text_size') : 12;
-$hmtb_button_font_weight    = ( '' !== get_option('hmtb_button_font_weight') ) ? get_option('hmtb_button_font_weight') : 'normal';
+$hmtb_background_color      = get_option('hmtb_background_color') ? get_option('hmtb_background_color') : '#F6CA0F';
+$hmtb_message_color         = get_option('hmtb_message_color') ? get_option('hmtb_message_color') : '#FFFFFF';
+$hmtb_msg_font_size         = get_option('hmtb_msg_font_size') ? get_option('hmtb_msg_font_size') : 12;
+$hmtb_button_color          = get_option('hmtb_button_color') ? get_option('hmtb_button_color') : '#d60000';
+$hmtb_button_text_color     = get_option('hmtb_button_text_color') ? get_option('hmtb_button_text_color') : '#FFFFFF';
+$hmtb_button_text_size      = get_option('hmtb_button_text_size') ? get_option('hmtb_button_text_size') : 12;
+$hmtb_button_font_weight    = get_option('hmtb_button_font_weight') ? get_option('hmtb_button_font_weight') : 'normal';
 ?>
 
 <style type="text/css">
 <?php
-if ( ( 'hmtb-fixed' === $hmtb_display_type ) && ( 'top' === $hmtb_display_option ) ) { echo 'ddd';
+if ( ( 'hmtb-fixed' === $hmtb_display_type ) && ( 'top' === $hmtb_display_option ) ) {
     ?>
     body {
         padding-top: <?php esc_html_e( $hmtb_bar_height ); ?>px!important;

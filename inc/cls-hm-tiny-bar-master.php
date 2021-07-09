@@ -46,7 +46,12 @@ class HMTB_Master
 		$hmtb_front = new HMTB_Front( $this->hmtb_version() );
 		$this->hmtb_loader->add_action( 'wp_head', $hmtb_front, 'hmtb_front_styles' );
 		$this->hmtb_loader->add_action( 'wp_head', $hmtb_front, 'hmtb_front_scripts' );
-		$this->hmtb_loader->add_action( 'wp_footer', $hmtb_front, 'hmtb_display_content' );
+
+		if ( ( 'hmtb-fixed' === get_option('hmtb_display_type') ) && ( 'top' === get_option('hmtb_display_option') ) ) {
+			$this->hmtb_loader->add_action( 'wp_body_open', $hmtb_front, 'hmtb_display_content' );
+		} else {
+			$this->hmtb_loader->add_action( 'wp_footer', $hmtb_front, 'hmtb_display_content' );
+		} 
 	}
 	
 	function hmtb_run() {
@@ -65,6 +70,25 @@ class HMTB_Master
 		update_option('hmtb_display_option', 'top');
 		update_option('hmtb_background_color', '#1F334A');
 		update_option('hmtb_button_color', '#00A9CE');
+	}
+
+	function hmtb_unregister_settings() {
+
+		global $wpdb;
+	
+		$tbl = $wpdb->prefix . 'options';
+		$search_string = HMTB_PREFIX .'%';
+		
+		$sql = $wpdb->prepare( "SELECT option_name FROM $tbl WHERE option_name LIKE %s", $search_string );
+		$options = $wpdb->get_results( $sql , OBJECT );
+	
+		if ( is_array( $options ) && count( $options ) ) {
+			
+			foreach ( $options as $option ) {
+				delete_option( $option->option_name );
+				delete_site_option( $option->option_name );
+			}
+		}
 	}
 }
 ?>
