@@ -1,4 +1,6 @@
 <?php
+if ( ! defined('ABSPATH') ) exit;
+
 /**
 *	Front CLS
 */
@@ -31,6 +33,7 @@ class HMTB_Front
 	}
 	
 	public function hmtb_display_content() {
+		
 		include HMTB_PATH . 'front/view/' . $this->hmtb_assets_prefix . 'front-view.php';
 	}
 }

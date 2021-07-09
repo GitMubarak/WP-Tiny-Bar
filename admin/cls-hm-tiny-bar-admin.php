@@ -1,7 +1,8 @@
 <?php
+if ( ! defined('ABSPATH') ) exit;
 
 /**
- *	Admin Panel Parent CLS
+ *	Master Class Admin
  */
 class HMTB_Admin
 {
@@ -9,8 +10,7 @@ class HMTB_Admin
 	private $hmtb_option_group;
 	private $hmtb_assets_prefix;
 
-	public function __construct($version)
-	{
+	function __construct( $version ) {
 		$this->hmtb_version = $version;
 		$this->hmtb_option_group = HMTB_PREFIX . 'options_group';
 		$this->hmtb_option_group_styles = HMTB_PREFIX . 'option_group_styles';
@@ -20,23 +20,22 @@ class HMTB_Admin
 	/**
 	 *	Loading the admin menu
 	 */
-	public function hmtb_admin_menu()
-	{
+	function hmtb_admin_menu() {
 
 		add_menu_page(
-			esc_html__('Tiny Bar', HMTB_TEXT_DOMAIN),
-			esc_html__('Tiny Bar', HMTB_TEXT_DOMAIN),
+			__('Tiny Bar', HMTB_TEXT_DOMAIN),
+			__('Tiny Bar', HMTB_TEXT_DOMAIN),
 			'',
 			'hmtb-admin-panel',
 			'',
-			'dashicons-archive',
+			'dashicons-minus',
 			100
 		);
 
 		add_submenu_page(
 			'hmtb-admin-panel',
-			esc_html__('Content Settings', HMTB_TEXT_DOMAIN),
-			esc_html__('Content Settings', HMTB_TEXT_DOMAIN),
+			__('Content Settings', HMTB_TEXT_DOMAIN),
+			__('Content Settings', HMTB_TEXT_DOMAIN),
 			'manage_options',
 			'hmtb-content-section',
 			array($this, HMTB_PREFIX . 'content_section')
@@ -45,8 +44,8 @@ class HMTB_Admin
 
 		add_submenu_page(
 			'hmtb-admin-panel',
-			esc_html__('Styles Settings', HMTB_TEXT_DOMAIN),
-			esc_html__('Styles Settings', HMTB_TEXT_DOMAIN),
+			__('Styles Settings', HMTB_TEXT_DOMAIN),
+			__('Styles Settings', HMTB_TEXT_DOMAIN),
 			'manage_options',
 			'hmtb-styles-section',
 			array($this, HMTB_PREFIX . 'styles_section')
@@ -56,8 +55,7 @@ class HMTB_Admin
 	/**
 	 *	Loading admin panel assets
 	 */
-	public function hmtb_enqueue_style()
-	{
+	public function hmtb_enqueue_style() {
 
 		wp_enqueue_style(
 			$this->hmtb_assets_prefix . 'admin-style',
@@ -72,8 +70,7 @@ class HMTB_Admin
 	/**
 	 *	Loading admin panel script
 	 */
-	public function hmtb_enqueue_script()
-	{
+	public function hmtb_enqueue_script() {
 
 		if (!wp_script_is('jquery')) {
 			wp_enqueue_script('jquery');
@@ -91,21 +88,20 @@ class HMTB_Admin
 	/**
 	 *	Loading admin panel view/forms
 	 */
-	public function hmtb_content_section()
-	{
+	public function hmtb_content_section() {
+
 		require_once HMTB_PATH . 'admin/view/' . $this->hmtb_assets_prefix . 'content-settings.php';
 	}
 
-	public function hmtb_styles_section()
-	{
+	public function hmtb_styles_section() {
+
 		require_once HMTB_PATH . 'admin/view/' . $this->hmtb_assets_prefix . 'styles-settings.php';
 	}
 
 	/**
 	 *	Loading register settings
 	 */
-	public function hmtb_register_settings()
-	{
+	public function hmtb_register_settings() {
 
 		add_settings_section( $this->hmtb_option_group, esc_html__( '', HMTB_TEXT_DOMAIN ), null, 'hmtb-content-section' );
 		// ==================================

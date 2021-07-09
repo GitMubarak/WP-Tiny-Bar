@@ -1,11 +1,11 @@
 <?php
 $hmtb_front_prefix = substr(HMTB_PREFIX, 0, -1) . '-';
 
-$hmtb_display_type          = ( '' !== get_option('hmtb_display_type') ) ? get_option('hmtb_display_type') : 'hmtb-fixed';
+$hmtb_display_type          = ( null !== get_option('hmtb_display_type') ) ? get_option('hmtb_display_type') : 'hmtb-fixed';
 $hmtb_display_option        = ( '' !== get_option('hmtb_display_option') ) ? get_option('hmtb_display_option') : 'top';
 $hmtb_scroll_hide           = ( '' !== get_option('hmtb_scroll_hide') ) ? get_option('hmtb_scroll_hide') : '';
 $hmtb_bar_height            = ( '' !== get_option('hmtb_bar_height') ) ? get_option('hmtb_bar_height') : 50;
-$hmtb_content_width         = ( '' !== get_option('hmtb_content_width' ) ) ? get_option('hmtb_content_width') : 500;
+echo $hmtb_content_width         = ( null !== get_option('hmtb_content_width' ) ) ? get_option('hmtb_content_width') : 500;
 $hmtb_message_content       = ( '' !== get_option('hmtb_message_content') ) ? get_option('hmtb_message_content') : 'There is no message to display. Please add one.';
 $hmtb_button_text           = ( '' !== get_option('hmtb_button_text') ) ? get_option('hmtb_button_text') : 'Button Text';
 $hmtb_button_uri            = ( '' !== get_option('hmtb_button_uri') ) ? get_option('hmtb_button_uri') : '#';
@@ -24,10 +24,10 @@ $hmtb_button_font_weight    = ( '' !== get_option('hmtb_button_font_weight') ) ?
 
 <style type="text/css">
 <?php
-if( ( 'hmtb-fixed' === $hmtb_display_type ) && ( 'top' === $hmtb_display_option ) ) {
+if ( ( 'hmtb-fixed' === $hmtb_display_type ) && ( 'top' === $hmtb_display_option ) ) { echo 'ddd';
     ?>
     body {
-        padding-top: <?php echo $hmtb_bar_height; ?>px!important;
+        padding-top: <?php esc_html_e( $hmtb_bar_height ); ?>px!important;
     }
     @media(max-width:500px) {
         body {
@@ -38,18 +38,18 @@ if( ( 'hmtb-fixed' === $hmtb_display_type ) && ( 'top' === $hmtb_display_option 
 }
 ?>
 #hmtb-top-bar, #hmtb-footer-bar {
-    background: <?php echo $hmtb_background_color; ?>!important;
-    min-height: <?php echo $hmtb_bar_height; ?>px;
-    color: <?php echo $hmtb_message_color; ?>;
+    background: <?php esc_html_e( $hmtb_background_color ); ?>!important;
+    min-height: <?php esc_html_e( $hmtb_bar_height ); ?>px;
+    color: <?php esc_html_e( $hmtb_message_color ); ?>;
 }
 .hmtb-content-wrapper {
-    color: <?php echo $hmtb_message_color; ?>!important;
+    color: <?php esc_html_e( $hmtb_message_color ); ?>!important;
     grid-template-columns: auto 150px;
-    max-width: <?php echo esc_attr( $hmtb_content_width ); ?>px;
-    min-height: <?php echo $hmtb_bar_height; ?>px;
+    max-width: <?php esc_html_e( $hmtb_content_width ); ?>px;
+    min-height: <?php esc_html_e( $hmtb_bar_height ); ?>px;
 }
 .hmtb-msg-container {
-  font-size: <?php echo esc_attr( $hmtb_msg_font_size ); ?>px;
+  font-size: <?php esc_html_e( $hmtb_msg_font_size ); ?>px;
 }
 <?php 
 if( 'hmtb-hide' === $hmtb_scroll_hide ) {
@@ -106,7 +106,7 @@ $hmtbHtml .= '</div>';
 //$hmtbHtml .= '<span class="hmtb-close"><i class="fas fa-times-circle"></i></span>';
 $hmtbHtml .= '</div>';
 
-if( 'top' === $hmtb_display_option ) { 
+if ( 'top' === $hmtb_display_option ) {
     ?>
     <div id="hmtb-top-bar" class="<?php echo esc_attr( $hmtb_display_type ); ?>">
         <?php echo $hmtbHtml; ?>

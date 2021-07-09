@@ -1,25 +1,27 @@
-=== Tiny Bar ===
-Contributors: mhmrajib
-Donate link: https://www.paypal.me/mhmrajib/2
+=== Tiny Bar - A Sticky Bar for Header-Footer ===
+Contributors: hmplugin, mhmrajib
+Donate link: https://www.paypal.me/mhmrajib
 Tags: bar, topbar, bottom bar, display message, notification
-Requires at least: 4.6
-Tested up to: 5.4.2
+Requires at least: 5.0
+Tested up to: 5.7.2
 Stable tag: 1.4
-Requires PHP: 5.6
-License: GPL-2.0 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+Requires PHP: 7.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This Tiny Bar plugin display a bar to your website. You can place it top or bottom of your webpage. It overlaps and hides when you scroll. Tiny Bar allows you to display a message to your visitors with a custom button.
 
 == Description ==
 
-[Tiny Bar](http://www.hossnimubarak.com) display a bar to your website. You can place it top or bottom of your webpage. It overlaps and hides when you scroll. Tiny Bar allows you to display a message to your visitors with a custom button.
+[Tiny Bar](https://hmplugin.com) display a bar to your website. You can place it top or bottom of your webpage. It overlaps and hides when you scroll. Tiny Bar allows you to display a message to your visitors with a custom button.
+
 
 **🌟 Plugin Features:**
 
-* Easy to install
-* Fully integrated in WordPress
-* Display Type Pption: Fixed or Overlap
+* Lightweight and easy to install
+* 100% Responsive and mobile friendly
+* Simple but effective
+* Display Type Option: Fixed or Overlap
 * Bar Display Position: Top or Bottom
 * Stay Visible Or Hide When Scrolling
 * Bar Height Option
@@ -46,33 +48,33 @@ This Tiny Bar plugin display a bar to your website. You can place it top or bott
 * Sample bengoli translation included
 
 
-**Responsive**
+**👨‍💻 Support / Live Chat**
 
-**Support / Live Chat**
+[Support or Live Chat](https://hmplugin.com)
 
-[Support or Live Chat](http://hossnimubarak.com/)
 
-**📋 Feedback/Rating:**
-
+**👍 Feedback/Rating:**
 If you find this plugin helpful, feel free to give us your valuable review. Rate us and share this plugin with your friends and others. This will motivate us and help us to grow.
+[Rate Us](https://wordpress.org/support/plugin/tiny-bar/reviews/#new-post)
 
 
-**🔥 Other Plugins from [HM Plugins](http://www.hossnimubarak.com)**
+**🔥 Other Plugins from [HM Plugin](https://hmplugin.com)**
 
-👉 [Worldwide Breaking News Headlines](https://wordpress.org/plugins/worldwide-breaking-news-headlines/) Breaking News, Headlines Widget Plugin
-👉 [WP Top News](https://wordpress.org/plugins/wp-top-news/) Top News, Breaking News, Headlines Shortcoded Plugin
-👉 [Tiny Bar](https://wordpress.org/plugins/tiny-bar/) Display a bar with a message and button at the Top or Bottom of your page
-👉 [WP Books Gallery](https://wordpress.org/plugins/wp-books-gallery/) Display Books Gallery with shortcoded
-👉 [WordPress Stripe Donation](https://wordpress.org/plugins/wp-stripe-donation/) This plugin allows you to collect donations via Stripe
-👉 [HM – Cool Author Box](https://wordpress.org/plugins/hm-cool-author-box-widget/) Author Box plugin widget to display author info
-👉 [HM Resume Manager](https://wordpress.org/plugins/hm-resume-manager/) A resume manager plugin
-👉 [HM Product Catalog](https://wordpress.org/plugins/hm-product-catalog/) A product catalog plugin
-👉 [HM Wc Product Advertiser](https://wordpress.org/plugins/hm-wc-product-advertiser/) Wocommerce Product Advertiser
+👉 [WP Books Gallery](https://wordpress.org/plugins/wp-books-gallery/) Books Gallery Plugin for WordPress
+👉 [Worldwide Breaking News Headlines](https://wordpress.org/plugins/worldwide-breaking-news-headlines/) Breaking News, Headlines Widget Plugin for WordPress
+👉 [WP Top News](https://wordpress.org/plugins/wp-top-news/) Top News, Breaking News, Headlines Shortcoded Plugin for WordPress
+👉 [WordPress Stripe Donation](https://wordpress.org/plugins/wp-stripe-donation/) Donations Coolection Plugin for WordPress using Stripe Payement
+👉 [Tiny Bar](https://wordpress.org/plugins/tiny-bar/) Message Bar Plugin for WordPress to display Message at Top/Bottom Bar of a web page
+👉 [HM – Cool Author Box](https://wordpress.org/plugins/hm-cool-author-box-widget/) Author Box plugin for WordPress to display author info
+👉 [HM Resume Manager](https://wordpress.org/plugins/hm-resume-manager/) A Resume/CV Manager Plugin for WordPress
+👉 [HM Product Catalog](https://wordpress.org/plugins/hm-product-catalog/) A Product Catalog Plugin for WordPress
+👉 [HM Wc Product Advertiser](https://wordpress.org/plugins/hm-wc-product-advertiser/) Product Advertiser Plugin for Wocommerce
 👉 [WP Scroll To Post](https://wordpress.org/plugins/wp-scroll-to-post/) Display random post(Single) at the bottom right corner
-👉 [HM Recent Posts Widget](https://wordpress.org/plugins/hm-recent-posts-widget/) Ticker Post plugin
-👉 [WP Alert Bars](https://wordpress.org/plugins/wp-alert-bars/) Notification/Alert box Plugin in Post/Page
-👉 [FaceBook LikeBox](https://wordpress.org/plugins/hm-simple-facebook-page/) A FaceBook LikeBox Widget
-👉 [WP Display FAQ](https://wordpress.org/plugins/wp-display-faq/) Display FAQs in your page
+👉 [HM Recent Posts Widget](https://wordpress.org/plugins/hm-recent-posts-widget/) Ticker Post plugin for WordPress
+👉 [WP Alert Bars](https://wordpress.org/plugins/wp-alert-bars/) Notification/Alert box Plugin for WordPress
+👉 [FaceBook LikeBox](https://wordpress.org/plugins/hm-simple-facebook-page/) A FaceBook LikeBox Plugin for WordPress
+👉 [WP Display FAQ](https://wordpress.org/plugins/wp-display-faq/) FAQs manager plugin for WordPress
+👉 [HM Logo Showcase](https://wordpress.org/plugins/hm-logo-showcase/) Logo manager plugin for WordPress
 
 
 == Installation ==
@@ -116,6 +118,9 @@ Yes, we are working on it. Please stay with us.
 
 
 == Changelog ==
+
+= 1.5 =
+* Code optimized
 
 = 1.4 =
 * Display type fixed/overlap option added
