@@ -1,11 +1,15 @@
 <?php
 if ( ! defined('ABSPATH') ) exit;
 
+include HMTB_PATH . 'common/hmtb-common.php';
+
 /**
  *	Master Class Admin
  */
 class HMTB_Admin
 {
+	use Hmtb_Common;
+
 	private $hmtb_version;
 	private $hmtb_option_group;
 	private $hmtb_assets_prefix;
@@ -39,7 +43,7 @@ class HMTB_Admin
 			__('Content Settings', HMTB_TEXT_DOMAIN),
 			'manage_options',
 			'hmtb-content-section',
-			array($this, HMTB_PREFIX . 'content_section')
+			array( $this, HMTB_PREFIX . 'content_section' )
 		);
 
 
@@ -49,7 +53,16 @@ class HMTB_Admin
 			__('Styles Settings', HMTB_TEXT_DOMAIN),
 			'manage_options',
 			'hmtb-styles-section',
-			array($this, HMTB_PREFIX . 'styles_section')
+			array( $this, HMTB_PREFIX . 'styles_section' )
+		);
+
+		add_submenu_page(
+			'hmtb-admin-panel',
+			__('Help & Usage', HMTB_TEXT_DOMAIN),
+			__('Help & Usage', HMTB_TEXT_DOMAIN),
+			'manage_options',
+			'hmtb-get-help',
+			array( $this, HMTB_PREFIX . 'get_help' )
 		);
 	}
 
@@ -278,6 +291,11 @@ class HMTB_Admin
 			<option value="bold" <?php echo ( 'bold' === get_option('hmtb_button_font_weight' ) ) ? 'selected' : ''; ?> ><?php _e('Bold', HMTB_TEXT_DOMAIN); ?></option>
 		</select>
 		<?php
+	}
+
+	function hmtb_get_help() {
+
+		include HMTB_PATH . 'admin/view/' . $this->hmtb_assets_prefix . 'help-usage.php';
 	}
 }
 ?>

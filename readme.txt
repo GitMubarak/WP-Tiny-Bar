@@ -1,7 +1,7 @@
 === Tiny Bar - A Sticky Bar for Header-Footer ===
 Contributors: hmplugin, mhmrajib
 Donate link: https://www.paypal.me/mhmrajib
-Tags: bar, topbar, bottom bar, display message, notification
+Tags: bar, topbar, bottom bar, banner, notification
 Requires at least: 5.0
 Tested up to: 5.7.2
 Stable tag: 1.5
@@ -123,7 +123,9 @@ Yes, we are working on it. Please stay with us.
 * Code optimized
 * Default value Set
 * Fixed position issue fixed for top
-* CSS fixed
+* Unnecessary css removed from admin Styles
+* Admin sidebar added for plugin owner
+* Help-Usage admin page added
 
 = 1.4 =
 * Display type fixed/overlap option added
