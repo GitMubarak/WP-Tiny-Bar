@@ -120,7 +120,7 @@ class HMTB_Admin
 	 */
 	function hmtb_register_settings() {
 
-		add_settings_section( $this->hmtb_option_group, __( '', HMTB_TEXT_DOMAIN ), null, 'hmtb-content-section' );
+		add_settings_section( $this->hmtb_option_group, '', null, 'hmtb-content-section' );
 		// ==================================
 		add_settings_field( 'hmtb_display_type', __( 'Display Type', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_display_type' ), 'hmtb-content-section', $this->hmtb_option_group );
 		add_settings_field( 'hmtb_display_option', __( 'Display Position', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_display_option' ), 'hmtb-content-section', $this->hmtb_option_group );
@@ -134,7 +134,7 @@ class HMTB_Admin
 		add_settings_field( 'hmtb_button_url_nofollow', __( 'Button URL Nofollow?', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_button_url_nofollow' ), 'hmtb-content-section', $this->hmtb_option_group );
 
 		// ==================================
-		add_settings_section( $this->hmtb_option_group_styles, __( '', HMTB_TEXT_DOMAIN ), null, 'hmtb-styles-section' );
+		add_settings_section( $this->hmtb_option_group_styles, '', null, 'hmtb-styles-section' );
 		add_settings_field( 'hmtb_background_color', __( 'Bar Background Color', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_background_color' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
 		add_settings_field( 'hmtb_message_color', __( 'Message Font Color', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_message_color' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );
 		add_settings_field( 'hmtb_msg_font_size', __( 'Message Font Size', HMTB_TEXT_DOMAIN ), array( &$this, 'hmtb_msg_font_size' ), 'hmtb-styles-section', $this->hmtb_option_group_styles );

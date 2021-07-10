@@ -126,6 +126,7 @@ Yes, we are working on it. Please stay with us.
 * Unnecessary css removed from admin Styles
 * Admin sidebar added for plugin owner
 * Help-Usage admin page added
+* CSS fixed for responsive
 
 = 1.4 =
 * Display type fixed/overlap option added

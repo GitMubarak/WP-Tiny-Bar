@@ -195,6 +195,7 @@
         left: 0%!important;
         transform: unset!important;
         margin-bottom: 10px!important;
+        padding: 15px 0;
     }
     .hmtb-btn-container {
         width: 100%!important;

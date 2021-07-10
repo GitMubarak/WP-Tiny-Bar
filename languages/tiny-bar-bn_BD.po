@@ -2,12 +2,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiny-bar\n"
 "POT-Creation-Date: 2019-05-25 22:28+0600\n"
-"PO-Revision-Date: 2019-05-25 22:33+0600\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2021-07-10 10:18+0000\n"
+"Language-Team: বাংলা\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-Basepath: ../admin\n"
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "X-Poedit-KeywordsList: esc_attr_e;esc_html__\n"
@@ -15,62 +15,128 @@ msgstr ""
 "Language: bn_BD\n"
 "X-Poedit-SearchPath-0: cls-hm-tiny-bar-admin.php\n"
 
-#: cls-hm-tiny-bar-admin.php:22 cls-hm-tiny-bar-admin.php:23
-msgid "Tiny Bar"
-msgstr "ছোট বার"
-
-#: cls-hm-tiny-bar-admin.php:75
-msgid "Bar Position"
-msgstr "বার অবস্থান"
-
-#: cls-hm-tiny-bar-admin.php:76
-msgid "Hide When Scroll?"
-msgstr "স্ক্রল করার সময় লুকান?"
-
-#: cls-hm-tiny-bar-admin.php:77
-msgid "Bar Background Color"
-msgstr "পটভূমির রং বার"
-
-#: cls-hm-tiny-bar-admin.php:78
-msgid "Bar Height"
-msgstr "বার উচ্চতা"
-
-#: cls-hm-tiny-bar-admin.php:80
-msgid "Message / Content"
-msgstr "বার্তা/বিষয়বস্তু"
-
-#: cls-hm-tiny-bar-admin.php:81
-msgid "Message Color"
-msgstr "বার্তার রং"
-
-#: cls-hm-tiny-bar-admin.php:83
-msgid "Button Text"
-msgstr "বাটন টেক্সট"
-
-#: cls-hm-tiny-bar-admin.php:84
-msgid "Button Color"
-msgstr "বোতাম রঙ"
-
-#: cls-hm-tiny-bar-admin.php:85
-msgid "Button URL"
-msgstr "বোতাম URL"
-
-#: cls-hm-tiny-bar-admin.php:106
-msgid "Top"
-msgstr "উপরে"
-
-#: cls-hm-tiny-bar-admin.php:109
-msgid "Bottom"
-msgstr "নিচে"
-
-#: cls-hm-tiny-bar-admin.php:129
-msgid "px"
-msgstr "px"
-
-#: cls-hm-tiny-bar-admin.php:137
+#: cls-hm-tiny-bar-admin.php:212
 msgid "Accept HTML, like: H1, H2, H3, P etc."
 msgstr "HTML, like: H1, H2, H3, P ইত্যাদি গ্রহন করা হয়"
 
-#: cls-hm-tiny-bar-admin.php:165
-msgid "Use http:// or https://"
-msgstr "ব্যবহার করুণ http:// or https://"
+#: cls-hm-tiny-bar-admin.php:138
+msgid "Bar Background Color"
+msgstr "বারের পটভূমির রঙ"
+
+#: cls-hm-tiny-bar-admin.php:128
+msgid "Bar Height"
+msgstr "বারের উচ্চতা"
+
+#: cls-hm-tiny-bar-admin.php:291
+msgid "Bold"
+msgstr "বোল্ড"
+
+#: cls-hm-tiny-bar-admin.php:184
+msgid "Bottom"
+msgstr "নিচে"
+
+#: cls-hm-tiny-bar-admin.php:141
+msgid "Button Color"
+msgstr "বোতামের রঙ"
+
+#: cls-hm-tiny-bar-admin.php:142
+msgid "Button Font Color"
+msgstr "বোতামের ফন্টের রং"
+
+#: cls-hm-tiny-bar-admin.php:143
+msgid "Button Font Size"
+msgstr "বোতামের ফন্টের সাইজ"
+
+#: cls-hm-tiny-bar-admin.php:144
+msgid "Button Font Weight"
+msgstr "বোতামের ফন্টের প্রস্থ"
+
+#: cls-hm-tiny-bar-admin.php:131
+msgid "Button Text"
+msgstr "বোতামের লেখা"
+
+#: cls-hm-tiny-bar-admin.php:132
+msgid "Button URL"
+msgstr "বোতামের URL"
+
+#: cls-hm-tiny-bar-admin.php:133
+msgid "Button URL Is External?"
+msgstr "বোতামের URL বহির্গত?"
+
+#: cls-hm-tiny-bar-admin.php:134
+msgid "Button URL Nofollow?"
+msgstr "বোতামের URL লুকানো?"
+
+#: cls-hm-tiny-bar-admin.php:42 cls-hm-tiny-bar-admin.php:43
+#: view/hmtb-content-settings.php:8
+msgid "Content Settings"
+msgstr "কন্টেন্ট সেটিংস"
+
+#: cls-hm-tiny-bar-admin.php:129
+msgid "Content Width"
+msgstr "কন্টেন্ট প্রস্থ"
+
+#: cls-hm-tiny-bar-admin.php:126
+msgid "Display Position"
+msgstr "অবস্থান"
+
+#: cls-hm-tiny-bar-admin.php:125
+msgid "Display Type"
+msgstr "দেখানোর টাইপ"
+
+#: cls-hm-tiny-bar-admin.php:171
+msgid "Fixed"
+msgstr "ফিক্সড"
+
+#: cls-hm-tiny-bar-admin.php:61 cls-hm-tiny-bar-admin.php:62
+msgid "Help & Usage"
+msgstr "সাহায্য এবং ব্যবহারবিধি"
+
+#: cls-hm-tiny-bar-admin.php:127
+msgid "Hide When Scroll?"
+msgstr "স্ক্রলের সময় লুকানো?"
+
+#: cls-hm-tiny-bar-admin.php:130
+msgid "Message / Content"
+msgstr "ম্যাসেজ / কন্টেন্ট"
+
+#: cls-hm-tiny-bar-admin.php:139
+msgid "Message Font Color"
+msgstr "ম্যাসেজ ফন্টের রঙ"
+
+#: cls-hm-tiny-bar-admin.php:140
+msgid "Message Font Size"
+msgstr "ম্যাসেজ ফন্টের সাইজ"
+
+#: cls-hm-tiny-bar-admin.php:290
+msgid "Normal"
+msgstr "সাধারন"
+
+#: cls-hm-tiny-bar-admin.php:174
+msgid "Overlap"
+msgstr "ওভারল্যাপ"
+
+#: cls-hm-tiny-bar-admin.php:197 cls-hm-tiny-bar-admin.php:204
+#: cls-hm-tiny-bar-admin.php:262 cls-hm-tiny-bar-admin.php:283
+msgid "px"
+msgstr "px"
+
+#: cls-hm-tiny-bar-admin.php:226
+msgid "Start with http:// or https://"
+msgstr "শুরু করুন http:// অথবা https:// দিয়ে"
+
+#: view/hmtb-styles-settings.php:8
+msgid "Style Settings"
+msgstr "পরিবর্তন সাধন করুন"
+
+#: cls-hm-tiny-bar-admin.php:52 cls-hm-tiny-bar-admin.php:53
+msgid "Styles Settings"
+msgstr "স্টাইল সেটিংস"
+
+#: cls-hm-tiny-bar-admin.php:31 cls-hm-tiny-bar-admin.php:32
+msgid "Tiny Bar"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:181
+msgid "Top"
+msgstr "উপরে"

@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: tiny-bar\n"
-"POT-Creation-Date: 2019-05-25 22:28+0600\n"
+"POT-Creation-Date: 2021-07-10 16:12+0600\n"
 "PO-Revision-Date: 2019-05-25 22:28+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,68 +10,135 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ../admin\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: esc_attr_e;esc_html__\n"
+"X-Poedit-KeywordsList: _e;__;esc_attr_e;esc_html__;esc_html;esc_attr\n"
 "X-Poedit-SearchPath-0: cls-hm-tiny-bar-admin.php\n"
+"X-Poedit-SearchPath-1: .\n"
 
-#: cls-hm-tiny-bar-admin.php:22 cls-hm-tiny-bar-admin.php:23
+#: cls-hm-tiny-bar-admin.php:31 cls-hm-tiny-bar-admin.php:32
 msgid "Tiny Bar"
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:75
-msgid "Bar Position"
+#: cls-hm-tiny-bar-admin.php:42 cls-hm-tiny-bar-admin.php:43
+#: view/hmtb-content-settings.php:8
+msgid "Content Settings"
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:76
+#: cls-hm-tiny-bar-admin.php:52 cls-hm-tiny-bar-admin.php:53
+msgid "Styles Settings"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:61 cls-hm-tiny-bar-admin.php:62
+msgid "Help & Usage"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:125
+msgid "Display Type"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:126
+msgid "Display Position"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:127
 msgid "Hide When Scroll?"
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:77
-msgid "Bar Background Color"
-msgstr ""
-
-#: cls-hm-tiny-bar-admin.php:78
+#: cls-hm-tiny-bar-admin.php:128
 msgid "Bar Height"
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:80
+#: cls-hm-tiny-bar-admin.php:129
+msgid "Content Width"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:130
 msgid "Message / Content"
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:81
-msgid "Message Color"
-msgstr ""
-
-#: cls-hm-tiny-bar-admin.php:83
+#: cls-hm-tiny-bar-admin.php:131
 msgid "Button Text"
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:84
-msgid "Button Color"
-msgstr ""
-
-#: cls-hm-tiny-bar-admin.php:85
+#: cls-hm-tiny-bar-admin.php:132
 msgid "Button URL"
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:106
+#: cls-hm-tiny-bar-admin.php:133
+msgid "Button URL Is External?"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:134
+msgid "Button URL Nofollow?"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:138
+msgid "Bar Background Color"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:139
+msgid "Message Font Color"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:140
+msgid "Message Font Size"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:141
+msgid "Button Color"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:142
+msgid "Button Font Color"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:143
+msgid "Button Font Size"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:144
+msgid "Button Font Weight"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:171
+msgid "Fixed"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:174
+msgid "Overlap"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:181
 msgid "Top"
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:109
+#: cls-hm-tiny-bar-admin.php:184
 msgid "Bottom"
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:129
+#: cls-hm-tiny-bar-admin.php:197 cls-hm-tiny-bar-admin.php:204
+#: cls-hm-tiny-bar-admin.php:262 cls-hm-tiny-bar-admin.php:283
 msgid "px"
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:137
+#: cls-hm-tiny-bar-admin.php:212
 msgid "Accept HTML, like: H1, H2, H3, P etc."
 msgstr ""
 
-#: cls-hm-tiny-bar-admin.php:165
-msgid "Use http:// or https://"
+#: cls-hm-tiny-bar-admin.php:226
+msgid "Start with http:// or https://"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:290
+msgid "Normal"
+msgstr ""
+
+#: cls-hm-tiny-bar-admin.php:291
+msgid "Bold"
+msgstr ""
+
+#: view/hmtb-styles-settings.php:8
+msgid "Style Settings"
 msgstr ""
