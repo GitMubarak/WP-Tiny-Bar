@@ -55,15 +55,6 @@ class HMTB_Admin
 			'hmtb-styles-section',
 			array( $this, HMTB_PREFIX . 'styles_section' )
 		);
-
-		add_submenu_page(
-			'hmtb-admin-panel',
-			__('Help & Usage', HMTB_TEXT_DOMAIN),
-			__('Help & Usage', HMTB_TEXT_DOMAIN),
-			'manage_options',
-			'hmtb-get-help',
-			array( $this, HMTB_PREFIX . 'get_help' )
-		);
 	}
 
 	/**

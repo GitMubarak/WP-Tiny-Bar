@@ -1,19 +1,28 @@
-=== Tiny Bar - A Sticky Bar for Header-Footer ===
+=== Tiny Bar - Notification Bar for Header-Footer ===
 Contributors: hmplugin, mhmrajib
 Donate link: https://www.paypal.me/mhmrajib
 Tags: bar, topbar, bottom bar, banner, notification
 Requires at least: 5.0
 Tested up to: 5.7.2
-Stable tag: 1.5
+Stable tag: 1.6
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This Tiny Bar plugin display a bar to your website. You can place it top or bottom of your webpage. It overlaps and hides when you scroll. Tiny Bar allows you to display a message to your visitors with a custom button.
+Tiny Bar display a notification bar to your website. You can place it top or bottom of your webpage. It overlaps and hides when you scroll.
 
 == Description ==
 
-[Tiny Bar](https://hmplugin.com) display a bar to your website. You can place it top or bottom of your webpage. It overlaps and hides when you scroll. Tiny Bar allows you to display a message to your visitors with a custom button.
+[Tiny Bar](https://hmplugin.com/wordpress-plugins/tiny-bar-wordpress-notification-plugin/) display a notification bar to your WordPress website. You can display amazing discount offers and create urgency among your site visitors and encourage them to take up your sales offers. 
+
+With the help of [Tiny Bar](https://hmplugin.com/wordpress-plugins/tiny-bar-wordpress-notification-plugin/), you can easily design a fascinating Notification Bar on your WordPress website to keep everyone engaged.
+
+You can place it top or bottom of your webpage. It overlaps and hides when you scroll. Tiny Bar allows you to display a message to your visitors with a custom button.
+
+
+<strong> See How It Works!: </strong>
+
+https://youtu.be/rGdKVtZYc0g
 
 
 **🌟 Plugin Features:**
@@ -21,16 +30,19 @@ This Tiny Bar plugin display a bar to your website. You can place it top or bott
 * Lightweight and easy to install
 * 100% Responsive and mobile friendly
 * Simple but effective
-* Display Type Option: Fixed or Overlap
-* Bar Display Position: Top or Bottom
-* Stay Visible Or Hide When Scrolling
-* Bar Height Option
-* Content Width Option
-* Message Content Option (Accept Html)
-* Button Text Option
-* Button Url Option
-* Button Url Target Option
-* Button Url Nofollow Option
+* Display Type: Fixed or Overlap
+* Position: Top or Bottom
+* Show-Hide When Scrolling
+
+** Content Options **
+
+* Bar Height
+* Content Width
+* Message Content (Accept Html)
+* Button Text
+* Button Url
+* Button Url Target
+* Button Url Nofollow
 
 ** Styling Options **
 
@@ -45,15 +57,16 @@ This Tiny Bar plugin display a bar to your website. You can place it top or bott
 **📋 Translation Ready:**
 
 * POT file included (/languages/)
-* Sample bengoli translation included
+* Bengoli included
 
 
 **👨‍💻 Support / Live Chat**
 
-[Support or Live Chat](https://hmplugin.com)
+[Support or Live Chat](https://hmplugin.com/wordpress-plugins/tiny-bar-wordpress-notification-plugin/)
 
 
 **👍 Feedback/Rating:**
+
 If you find this plugin helpful, feel free to give us your valuable review. Rate us and share this plugin with your friends and others. This will motivate us and help us to grow.
 [Rate Us](https://wordpress.org/support/plugin/tiny-bar/reviews/#new-post)
 
@@ -110,10 +123,10 @@ Yes, we are working on it. Please stay with us.
 
 == Screenshots ==
 
-1. Activate TinyBar in from Plugins
-2. Admin Settings for TinyBar
-3. TinyBar at Top of the page
-4. TinyBar at Bottom of the page
+1. TinyBar top position
+2. TinyBar bottom position
+3. Content Settings
+3. Styles Settings
 5. TinyBar on mobile view (responsive)
 
 
