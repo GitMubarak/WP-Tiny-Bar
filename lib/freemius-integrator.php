@@ -4,8 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'tb_fs' ) ) {
+    
     // Create a helper function for easy SDK access.
     function tb_fs() {
+
         global $tb_fs;
 
         if ( ! isset( $tb_fs ) ) {
@@ -17,20 +19,16 @@ if ( ! function_exists( 'tb_fs' ) ) {
                 'slug'                => 'tiny-bar',
                 'type'                => 'plugin',
                 'public_key'          => 'pk_d71a605b1ee9227b411483a2e0be3',
-                'is_premium'          => true,
-                'premium_suffix'      => 'Professional',
+                'is_premium'          => false,
+                'premium_suffix'      => '',
                 // If your plugin is a serviceware, set this option to false.
-                'has_premium_version' => true,
+                'has_premium_version' => false,
                 'has_addons'          => false,
-                'has_paid_plans'      => true,
+                'has_paid_plans'      => false,
                 'menu'                => array(
                     'slug'           => 'hmtb-admin-panel',
                     'first-path'     => 'admin.php?page=hmtb-content-section',
-                    'support'        => true,
                 ),
-                // Set the SDK to work in a sandbox mode (for development & testing).
-                // IMPORTANT: MAKE SURE TO REMOVE SECRET KEY BEFORE DEPLOYMENT.
-                'secret_key'          => 'sk_x=150>2Y)tT)8IMBZWm#f(yQ+%2km',
             ) );
         }
 
@@ -39,6 +37,7 @@ if ( ! function_exists( 'tb_fs' ) ) {
 
     // Init Freemius.
     tb_fs();
+
     // Signal that SDK was initiated.
     do_action( 'tb_fs_loaded' );
 

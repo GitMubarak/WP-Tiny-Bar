@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('ABSPATH') ) exit;
-settings_errors(); 
+settings_errors();
 ?>
 <div class="wrap" id="hmtb-settings-page-wrap">
     
